@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 # using class import
-from KMeans import KMeans
+from default.KMeans import KMeans
 
 # EXERCISE 1
 # read data set with numpy
