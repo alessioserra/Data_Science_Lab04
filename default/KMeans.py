@@ -6,7 +6,7 @@ import csv
 
 # EXERCISE 3
 class KMeans:
-    def __init__(self, n_clusters, max_iter=100):
+    def __init__(self, n_clusters, max_iter=10):
         self.n_clusters = n_clusters
         self.max_iter = max_iter
         self.centroids = None
@@ -32,7 +32,7 @@ class KMeans:
         plt.show()
 
         # MAX 100 iterations
-        while m < self.max_iter:
+        while m < 10:
             # 2 Assignment 
             for element in dataset:
                 minimum = 1000000000
@@ -83,7 +83,7 @@ class KMeans:
 
             # new iteration
             m = m + 1
-            print("Interaction #"+str(m))
+            print("Interation #"+str(m))
         
         self.labels = kluster
         fig2, ax2 = plt.subplots(figsize=(8, 5))
@@ -95,7 +95,6 @@ class KMeans:
 
             ax2.scatter(xx, yy, cmap(kluster[key]))
 
-        plt.show()
 
         # EXERCISE 1.6
         self.centroids = centroids
@@ -103,6 +102,7 @@ class KMeans:
         yc = [yy for xx, yy in centroids]
         area = 30
         ax2.scatter(xc, yc, c="black", s=area, marker="*")
+        
         plt.show()
 
         return kluster
